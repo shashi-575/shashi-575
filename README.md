@@ -1,5 +1,7 @@
 ## Hi there 👋 shashidhar
-
+![Java](https://img.shields.io/badge/Java-ED8B00?logo=openjdk&logoColor=white&style=for-the-badge)
+![HTML](https://img.shields.io/badge/HTML-E34F26?logo=html5&logoColor=white&style=for-the-badge)
+![Python](https://img.shields.io/badge/python-3670A0?logo=python&logoColor=ffdd54&style=for-the-badge)
 
 <!--
 **shashi-575/shashi-575** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
