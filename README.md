@@ -1,5 +1,5 @@
 ## Hi there 👋 shashidhar
-![Static Badge](https://img.shields.io/badge/javascript-blue?style=plastic&logo=javascript&logoColor=yellow&logoSize=auto)
+
 
 <!--
 **shashi-575/shashi-575** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
