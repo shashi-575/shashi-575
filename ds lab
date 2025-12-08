@@ -1,0 +1,28 @@
+paging 
+
+#include <stdio.h>
+
+int main() {
+    int pageTable[20], n, pageNo, offset, physAddr;
+
+    printf("Enter number of pages: ");
+    scanf("%d", &n);
+
+    printf("Enter Frame Number for each page:\n");
+    for(int i = 0; i < n; i++) {
+        printf("Page %d: ", i);
+        scanf("%d", &pageTable[i]);
+    }
+
+    printf("\nEnter Page Number and Offset: ");
+    scanf("%d %d", &pageNo, &offset);
+
+    if(pageNo >= n)
+        printf("Invalid Page Number!\n");
+    else {
+        physAddr = pageTable[pageNo] * 100 + offset; // Frame size assumed as 100
+        printf("Physical Address = %d\n", physAddr);
+    }
+
+    return 0;
+}
