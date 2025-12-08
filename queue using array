@@ -1,0 +1,75 @@
+#include<stdio.h>
+#include<stdlib.h>
+#define max 50
+int front =-1;
+int rear=-1;
+int queue[max];
+void insertion();
+void deletion();
+void display();
+void main()
+{
+int ch;
+system("clear");
+while(1)
+{
+printf("\n__________");
+printf("\n queue ADT operations");
+printf("\n_________");
+printf("\n\t1.insertion");
+printf("\n\t2.deletion");
+printf("\n\t3.display");
+printf("\n\t4.exit");
+printf("\n Eneter ur choice");
+scanf("%d",&ch);
+switch(ch)
+{
+case 1:insertion();
+break;
+case 2:deletion();
+break;
+case 3:display();
+break;
+case 4:exit(0);
+break;
+default:printf("\n wrong choice");
+}
+}
+}
+void insertion()
+{
+int element;
+if(front==-1)
+front=0;
+if(rear==max-1)
+printf("\nQueue overflow");
+else
+{
+printf("\n enter elmnt to be inserted:");
+scanf("%d",&element);
+rear=rear+1;
+queue[rear]=element;
+}
+}
+void deletion()
+{
+if(front==-1 || front>rear)
+printf("\n queue underflow\n");
+else
+{
+printf("\n deleted element is:%d\n",queue[front]);
+front=front+1;
+}
+}
+void display()
+{
+int i;
+if(front==-1 || front>rear)
+printf("\n queue is empty\n");
+else
+{
+printf("Queue elements are : \n");
+for(i=front;i<=rear;i++)
+printf("%d->",queue[i]);
+}
+}
