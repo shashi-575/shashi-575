@@ -1,0 +1,42 @@
+# Write a program to implement BFS
+
+graph = {
+    'A': ['B', 'C'],
+    'B': ['D', 'E'],
+    'C': ['F', 'G'],
+    'D': [],
+    'E': [],
+    'F': [],
+    'G': []
+}
+
+target = input("Enter target variable in seq: ")
+target2 = list(target)
+print(target2)
+
+def bfs(graph, node, target):
+    visited = []
+    queue = []
+
+    queue.append(node)
+    visited.append(node)
+    flag = 1
+
+    while queue:
+        s = queue.pop(0)
+        print(s, end=" ")
+
+        if flag == 1:
+            for neighbour in graph[s]:
+
+                if neighbour not in visited:
+                    visited.append(neighbour)
+                    queue.append(neighbour)
+
+                if neighbour == target:
+                    flag = 0
+                    break
+
+for target3 in target2:
+    bfs(graph, 'A', target3)
+    print("\n")
