@@ -1,0 +1,39 @@
+# Write a program to implement DFS
+
+graph = {
+    'A': ['B', 'C'],
+    'B': ['D', 'E'],
+    'C': ['F', 'G'],
+    'D': [],
+    'E': [],
+    'F': [],
+    'G': []
+}
+
+target = input("Enter target variable in seq: ")
+target2 = list(target)
+print(target2)
+
+def dfs(graph, node, target):
+    visited = set()
+    stack = []
+
+    stack.append(node)
+
+    while stack:
+        s = stack.pop()
+        print(s, end=" ")
+
+        if s == target:
+            break
+
+        if s not in visited:
+            visited.add(s)
+
+            for neighbour in graph[s]:
+                if neighbour not in visited:
+                    stack.append(neighbour)
+
+for target3 in target2:
+    dfs(graph, 'A', target3)
+    print("\n")
