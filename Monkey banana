@@ -1,0 +1,23 @@
+def monkey_banana():
+    monkey_pos = "door"
+    box_pos = "window"
+    banana_pos = "middle"
+    on_box = False
+
+    print("Monkey at door")
+
+    if monkey_pos != box_pos:
+        print("Monkey moves to box")
+        monkey_pos = box_pos
+
+    print("Monkey pushes box to banana")
+    box_pos = banana_pos
+    monkey_pos = banana_pos
+
+    print("Monkey climbs box")
+    on_box = True
+
+    if on_box and monkey_pos == banana_pos:
+        print("Monkey grabs banana ")
+
+monkey_banana()
