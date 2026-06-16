@@ -1,0 +1,37 @@
+from collections import deque
+
+goal = (1,2,3,4,5,6,7,8,0)
+
+def neighbors(s):
+    i = s.index(0)
+    moves = []
+    if i%3>0: moves.append(i-1)
+    if i%3<2: moves.append(i+1)
+    if i>2: moves.append(i-3)
+    if i<6: moves.append(i+3)
+
+    result = []
+    for m in moves:
+        t = list(s)
+        t[i], t[m] = t[m], t[i]
+        result.append(tuple(t))
+    return result
+
+def bfs(start):
+    q = deque([(start, [])])
+    seen = set()
+
+    while q:
+        s, path = q.popleft()
+        if s == goal:
+            return path + [s]
+        if s in seen:
+            continue
+        seen.add(s)
+        for n in neighbors(s):
+            q.append((n, path + [s]))
+
+start = (1,2,3,4,0,5,6,7,8)
+
+for step in bfs(start):
+    print(step)
